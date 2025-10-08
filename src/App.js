@@ -1,24 +1,110 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import card1 from "./img/card1.jpg";
+import card2 from "./img/card2.jpg";
+import mancuera from "./img/mancuera.jpg";
+import saltoCuerda from "./img/salto cuerda.jpg";
+import box from "./img/box.jpg";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Contacto from "./Contancto";
+import Registro from "./Registro";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <header className="navbar">
+          <div className="navbar-container">
+            <div className="logo">GYMBROS</div>
+            <nav>
+              <ul className="nav-links">
+                <li><Link to="/">INICIO</Link></li>
+                <li><Link to="/contacto">CONTACTO</Link></li>
+                <li><Link to="/registro">REGISTRATE!</Link></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <section className="hero">
+                <div className="center-container">
+                  <div className="center-text">BUSCA TU GYMBRO!</div>
+                  <Link to="/registro" className="btn-unete">ÚNETE YA!</Link>
+                </div>
+              </section>
+
+              <section className="sobre-nosotros">
+                <div className="sobre-contenido">
+                  <div>
+                    <h2>SOBRE NOSOTROS</h2>
+                    <div className="sobre-caja">
+                      <p>
+                        La web hecha para los que saben que entrenar solo no es lo mismo. 💪<br />
+                        Un espacio donde encontrás compañeros con tu misma energía para motivarte, progresar y disfrutar cada serie. 🤝
+                      </p>
+                      <p>
+                        Acá conectás con tu gymbro o gymsis, compartís tips, rutinas y lográs que el entrenamiento sea mucho más que levantar pesas — es crecer acompañado. 🚀
+                      </p>
+                      <p>GYMBRO es comunidad, motivación y progreso. 🏋️‍♂️✨</p>
+                    </div>
+                  </div>
+                  <div className="sobre-cards">
+                    <div className="card-img">
+                      <img src={card1} alt="Card 1" />
+                    </div>
+                    <div className="card-img">
+                      <img src={card2} alt="Card 2" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="que-ofrecemos">
+                <div className="que-ofrecemos-container">
+                  <h2 className="que-ofrecemos-titulo">¿QUÉ OFRECEMOS?</h2>
+                  <p className="que-ofrecemos-descripcion">
+                    Nos comprometemos a brindarte la mejor experiencia de entrenamiento.
+                  </p>
+                  <div className="que-ofrecemos-cards">
+                    <div className="ofrecemos-card">
+                      <img src={mancuera} alt="BUSQUEDA PERSONALIZADO" />
+                      <div className="ofrecemos-card-text">BUSQUEDA PERSONALIZADO</div>
+                    </div>
+                    <div className="ofrecemos-card">
+                      <img src={saltoCuerda} alt="PROGRESO EN TUS ENTRENAMIENTOS" />
+                      <div className="ofrecemos-card-text">PROGRESO EN TUS ENTRENAMIENTOS</div>
+                    </div>
+                    <div className="ofrecemos-card">
+                      <img src={box} alt="CONOCE GENTE!" />
+                      <div className="ofrecemos-card-text">CONOCE GENTE!</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="contacto">
+                <div className="contacto-contenido">
+                  <div className="contacto-texto">
+                    <h2>PONTE EN CONTACTO CON NOSOTROS</h2>
+                  </div>
+                  <Link to="/contacto" className="btn-contacto">Contacto</Link>
+                </div>
+              </section>
+
+              <footer className="footer">
+                <div>
+                  <span>Correo: contacto@gymbro.com</span> |
+                  <span> © 2025 GYMBRO. Todos los derechos reservados.</span>
+                </div>
+              </footer>
+            </>
+          } />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/registro" element={<Registro />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
