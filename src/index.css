@@ -30,6 +30,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -63,6 +64,27 @@ body {
     color: #fffb04;
 }
 
+.nav-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.nav-links button:hover {
+    color: #fffb04;
+}
+
+.nav-welcome {
+    color: #fffb04;
+    font-weight: 600;
+}
+
 /* Ajuste para que el contenido no quede debajo de la navbar */
 .hero,
 .sobre-nosotros,
@@ -71,6 +93,12 @@ body {
 .contacto-section,
 .registro-section {
     padding-top: 80px;
+}
+
+.member-hero,
+.member-dashboard,
+.member-grid {
+    padding-top: 0;
 }
 
 /* ---------------- HERO ---------------- */
@@ -117,6 +145,15 @@ body {
     text-align: center;
 }
 
+.member-subtitle {
+    color: #fff;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.2rem;
+    margin: 0 auto 32px auto;
+    max-width: 540px;
+    line-height: 1.6;
+}
+
 .btn-unete {
     display: inline-block;
     padding: 18px 48px;
@@ -137,6 +174,218 @@ body {
 .btn-unete:hover {
     background-color: #222;
     color: #ffffff;
+}
+
+.member-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('img/SPOTTER.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.member-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.65));
+}
+
+.member-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    text-align: center;
+    padding: 24px;
+}
+
+.member-hero-kicker {
+    color: #fffb04;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.member-hero-content h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 4.5rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.member-hero-subtitle {
+    margin: 24px auto 36px auto;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.member-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #fffb04;
+    color: #111;
+    box-shadow: 0 12px 24px rgba(255, 251, 4, 0.25);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    background: transparent;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+}
+
+.member-dashboard {
+    background: #111;
+    padding: 80px 6vw;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.member-card {
+    background: #181818;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    color: #fff;
+}
+
+.member-card h2 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.member-card--profile {
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card--profile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 251, 4, 0.06), rgba(255, 251, 4, 0));
+    pointer-events: none;
+}
+
+.member-profile-grid {
+    display: grid;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.member-profile-grid .label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.member-profile-grid p {
+    margin: 8px 0 0 0;
+    font-size: 1.1rem;
+}
+
+.member-status p {
+    color: #fffb04;
+}
+
+.member-link {
+    margin-top: 24px;
+    display: inline-block;
+    color: #fffb04;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.member-card--highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.member-card--highlights li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.member-card--highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #fffb04;
+}
+
+.member-grid {
+    background: linear-gradient(180deg, #111 0%, #050505 100%);
+    padding: 80px 6vw 120px 6vw;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.member-grid-item {
+    background: #141414;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+}
+
+.member-grid-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.member-grid-text {
+    padding: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.member-grid-text h3 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+}
+
+.member-grid-text p {
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* ---------------- SOBRE NOSOTROS ---------------- */
@@ -465,4 +714,10 @@ body {
     .nav-links a {
         font-size: 1rem;
     }
+}
+
+.info-msg {
+    color: #fffb04;
+    font-size: 0.85rem;
+    text-align: left;
 }
