@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Contacto() {
@@ -35,8 +34,8 @@ function Contacto() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-    setErrors({ ...errors, [name]: validateField(name, value) });
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
     setSuccess("");
   };
 
@@ -55,20 +54,7 @@ function Contacto() {
   };
 
   return (
-    <>
-      <header className="navbar">
-        <div className="navbar-container">
-          <div className="logo">GYMBROS</div>
-          <nav>
-            <ul className="nav-links">
-              <li><Link to="/">INICIO</Link></li>
-              <li><Link to="/contacto">CONTACTO</Link></li>
-              <li><Link to="/registro">¡REGÍSTRATE!</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section className="contacto-section">
+    <section className="contacto-section">
         <div className="contacto-container">
           <h1>¡Contáctanos!</h1>
           <p className="contacto-descripcion">
@@ -110,13 +96,6 @@ function Contacto() {
           </form>
         </div>
       </section>
-      <footer className="footer">
-        <div>
-          <span>Correo: contacto@gymbro.com</span> |
-          <span> © 2025 GYMBRO. Todos los derechos reservados.</span>
-        </div>
-      </footer>
-    </>
   );
 }
 
