@@ -72,7 +72,7 @@ function Login() {
   return (
     <section className="contacto-section">
       <div className="contacto-container">
-        <h1>Iniciá Sesión</h1>
+        <h1>Iniciar Sesión</h1>
         <p className="contacto-descripcion">
           Accedé a tu cuenta y reencontrate con tus Gymbros. 🏋️‍♀️🔥
         </p>
